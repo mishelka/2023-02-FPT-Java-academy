@@ -1,5 +1,7 @@
 package sk.fpt.academy.persons;
 
+import java.util.Objects;
+
 public class Person {
     private String name;
     private int age;
@@ -10,16 +12,14 @@ public class Person {
 //        car.setOwner(this);
 //    }
 
-    /**
-     * ...
-     * @param name meno osoby
-     * @param age vek osoby, moze byt od do
-     */
-    public Person(String name, int age) {
+
+    public Person(String name) {
         this.name = name;
+    }
+
+    public Person(String name, int age) {
+        this(name);
         setAge(age);
-        //boolean vysledok = setAge(age);
-        //if(!vysledok) System.out.println("Nespravny vek");
     }
 
     /**
@@ -55,5 +55,18 @@ public class Person {
                 "name='" + name + '\'' +
                 ", age=" + age +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Person person = (Person) o;
+        return age == person.age && Objects.equals(name, person.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, age);
     }
 }

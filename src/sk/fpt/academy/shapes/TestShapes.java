@@ -1,4 +1,4 @@
-package shapes;
+package sk.fpt.academy.shapes;
 
 public class TestShapes {
     public static void main(String[] args) {
@@ -9,7 +9,7 @@ public class TestShapes {
         //...
         // x (prida medzery na zaciatok), y (prida prazdne riadky na zaciatok)
 
-        t.print();
-        r.print();
+//        t.print();
+//        r.print();
     }
 }

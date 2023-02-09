@@ -1,3 +1,5 @@
+package sk.fpt.academy;
+
 //Test on inputs 234 and 2132
 public class NumberToText {
 	//TODO: Fix main method

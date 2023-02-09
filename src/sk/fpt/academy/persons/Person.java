@@ -1,4 +1,4 @@
-package persons;
+package sk.fpt.academy.persons;
 
 public class Person {
     private String name;

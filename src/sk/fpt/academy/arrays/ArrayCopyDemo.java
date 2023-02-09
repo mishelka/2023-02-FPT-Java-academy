@@ -1,4 +1,4 @@
-package arrays;
+package sk.fpt.academy.arrays;
 
 public class ArrayCopyDemo {
     public static void main(String[] args) {

@@ -1,3 +1,5 @@
+package sk.fpt.academy;
+
 /*
   TODO: Expected output from the program for size = 10
              *

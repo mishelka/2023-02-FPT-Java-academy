@@ -1,6 +1,4 @@
-package persons;
-
-import persons.Person;
+package sk.fpt.academy.persons;
 
 public class Student extends Person {
     private int studyYear = 1;

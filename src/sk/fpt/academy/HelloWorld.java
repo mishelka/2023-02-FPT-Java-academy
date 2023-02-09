@@ -1,9 +1,10 @@
-import persons.*;
-//import persons.Car;
-//import persons.Person;
-//import persons.Student;
+package sk.fpt.academy;
+
+import sk.fpt.academy.persons.*;
 
 class HelloWorld {
+	public static final int KONSTANTA = 123;
+
 	public static void main(String[] args) {
 		for (int i = 0; i < 3; i++) {
 			System.out.println("Hello World!");

@@ -1,4 +1,4 @@
-package shapes;
+package sk.fpt.academy.shapes;
 
 public class Triangle extends Shape {
     @Override

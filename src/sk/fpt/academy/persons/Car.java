@@ -1,4 +1,4 @@
-package persons;
+package sk.fpt.academy.persons;
 
 public class Car {
     private String brand;

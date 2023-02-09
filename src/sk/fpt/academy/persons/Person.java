@@ -2,7 +2,7 @@ package sk.fpt.academy.persons;
 
 import java.util.Objects;
 
-public class Person {
+public class Person implements Comparable {
     private String name;
     private int age;
 //    private Car[] cars;
@@ -68,5 +68,21 @@ public class Person {
     @Override
     public int hashCode() {
         return Objects.hash(name, age);
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        if(o == null) return 1;
+        if(!(o instanceof Person)) return 1;
+        Person p = (Person) o;
+
+        if(p.getName() == null) return 1;
+        if(name == null) return -1;
+
+        int res = name.compareTo(p.getName());
+        if(res == 0) {
+            res = age - p.getAge();
+        }
+        return res;
     }
 }

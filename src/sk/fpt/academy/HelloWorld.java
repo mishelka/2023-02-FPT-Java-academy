@@ -2,6 +2,11 @@ package sk.fpt.academy;
 
 import sk.fpt.academy.persons.*;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
 class HelloWorld {
 	public static final int KONSTANTA = 123;
 
@@ -11,6 +16,7 @@ class HelloWorld {
 //		}
 //
 		Person jan = new Person("Janko Hrasko", 20);
+		Person jan2 = new Person("Janko Hrasko", 30);
 //		System.out.println(jan.getAge());
 //		jan.setName("Jano Hrach");
 //		jan.setAge(50);
@@ -29,6 +35,15 @@ class HelloWorld {
 
 		System.out.println(s.equals(jan)); //false
 		System.out.println(s.equals(copy)); //true
+
+		List<Person> pers = new ArrayList<>();
+		Collections.sort(pers);
+		Person[] persons = { jan2, s, jan, copy };
+		Arrays.sort(persons);
+		System.out.println(Arrays.asList(persons));
+		//tretia a lepsia moznost je Comparator - kto chce, pozrite si
+		//Comparator je null proof, Comparable a Collections.sort a Arrays.sort nie su
+
 
 //		Car bmw = new Car("BMW");
 //		bmw.setOwner(jan);

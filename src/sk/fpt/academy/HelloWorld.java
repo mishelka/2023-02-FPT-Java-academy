@@ -33,6 +33,8 @@ class HelloWorld {
 		System.out.println(s.equals(jan)); //false
 		System.out.println(s.equals(copy)); //true
 
+		List<Double> listCisel = new ArrayList<>();
+
 		List<Person> pers = new ArrayList<>();
 		Collections.sort(pers);
 		Person[] persons = { jan2, s, jan, copy };

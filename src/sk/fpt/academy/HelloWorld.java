@@ -14,15 +14,15 @@ class HelloWorld {
 //
 		Person jan = new Person("Janko Hrasko", 20);
 		Person jan2 = new Person("Janko Hrasko", 30);
-//		System.out.println(jan.getAge());
-//		jan.setName("Jano Hrach");
-//		jan.setAge(50);
-//		System.out.println(jan.getAge());
+		System.out.println(jan.getAge());
+		jan.setName("Jano Hrach");
+		jan.setAge(50);
+		System.out.println(jan.getAge());
 //
 //		jan.setAge(200);
 //		System.out.println(jan.getAge() + " " + jan.getName());
 
-		Student s = new Student("Matko", 20, 3, "13456");
+		Student s = new Student("Matusko", 20, 3, "13456");
 		s.setStudyYear(3);
 //		System.out.println(s.getName() + " " + s.getAge() + " " + s.getStudyYear());
 		System.out.println(s);

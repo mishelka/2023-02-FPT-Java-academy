@@ -14,30 +14,14 @@ class HelloWorld {
 //
 		Person jan = new Person("Janko Hrasko", 20);
 		Person jan2 = new Person("Janko Hrasko", 30);
-//		System.out.println(jan.getAge());
-//		jan.setName("Jano Hrach");
-//		jan.setAge(50);
-//		System.out.println(jan.getAge());
-//
 //		jan.setAge(200);
 //		System.out.println(jan.getAge() + " " + jan.getName());
-
-		Student s = new Student("Matko", 20, 3, "13456");
-		s.setStudyYear(3);
-//		System.out.println(s.getName() + " " + s.getAge() + " " + s.getStudyYear());
-		System.out.println(s);
-//		String str = "Ahoj " + s;
-//		System.out.println(str);
-		Student copy = s;
-
-		System.out.println(s.equals(jan)); //false
-		System.out.println(s.equals(copy)); //true
 
 		List<Double> listCisel = new ArrayList<>();
 
 		List<Person> pers = new ArrayList<>();
 		Collections.sort(pers);
-		Person[] persons = { jan2, s, jan, copy };
+		Person[] persons = { jan2, jan };
 		Arrays.sort(persons);
 		System.out.println(Arrays.asList(persons));
 		//tretia a lepsia moznost je Comparator - kto chce, pozrite si

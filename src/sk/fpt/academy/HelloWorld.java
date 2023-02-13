@@ -14,6 +14,7 @@ class HelloWorld {
 //
 		Person jan = new Person("Janko Hrasko", 20);
 		Person jan2 = new Person("Janko Hrasko", 30);
+
 //		jan.setAge(200);
 //		System.out.println(jan.getAge() + " " + jan.getName());
 

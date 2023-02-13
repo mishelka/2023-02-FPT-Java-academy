@@ -1,6 +1,6 @@
 package sk.fpt.academy.basicAndUsefulJavaClasses;
 
-gimport java.util.Formatter;
+import java.util.Formatter;
 
 public class StringBuilderTest {
     public static void main(String[] args) {

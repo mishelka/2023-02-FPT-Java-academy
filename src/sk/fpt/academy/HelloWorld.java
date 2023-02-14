@@ -1,6 +1,6 @@
 package sk.fpt.academy;
 
-import sk.fpt.academy.personss.*;
+import sk.fpt.academy.persons.*;
 
 import java.util.*;
 

@@ -1,6 +1,6 @@
 package sk.fpt.academy;
 
-import sk.fpt.academy.persons.*;
+import sk.fpt.academy.persons.Person;
 
 import java.util.*;
 
@@ -53,7 +53,7 @@ class HelloWorld {
 //		Car bmw = new Car("BMW");
 //		bmw.setOwner(jan);
 //		System.out.println(bmw);
-//
+//		toto je koment
 //		Car audi = new Car("Audi");
 //		audi.setOwner(s);
 //		System.out.println(audi);

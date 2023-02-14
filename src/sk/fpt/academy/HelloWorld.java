@@ -18,7 +18,7 @@ class HelloWorld {
 //		jan.setAge(200);
 //		System.out.println(jan.getAge() + " " + jan.getName());
 
-		List<Double> listCisel = new ArrayList<>();
+//		List<Double> listCisel = new ArrayList<>();
 
 		List<Person> pers = new ArrayList<>();
 		Collections.sort(pers);

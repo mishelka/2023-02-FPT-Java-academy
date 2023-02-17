@@ -12,43 +12,53 @@ class HelloWorld {
 //			System.out.println("Hello World!");
 //		}
 //
-		Person jan = new Person("Janko Hrasko", 20);
-		Person jan2 = new Person("Janko Hrasko", 30);
+		Person jan,jan2;
+		try {
+			jan = new Person("Janko Hrasko", 1000);
+		} catch (AgeOutBoundsException e) {
+			System.err.println(e.getMessage());
+		}
+
+		try {
+			jan2 = new Person("Janko Hrasko", 30);
+		} catch (AgeOutBoundsException e) {
+			System.err.println(e.getMessage());
+		}
 
 //		jan.setAge(200);
 //		System.out.println(jan.getAge() + " " + jan.getName());
 
-		List<Double> listCisel = new ArrayList<>();
-
-		List<Person> pers = new ArrayList<>();
-		Collections.sort(pers);
-		Person[] persons = { jan2, jan };
-		Arrays.sort(persons);
-		System.out.println(Arrays.asList(persons));
+//		List<Double> listCisel = new ArrayList<>();
+//
+//		List<Person> pers = new ArrayList<>();
+//		Collections.sort(pers);
+//		Person[] persons = { jan2, jan };
+//		Arrays.sort(persons);
+//		System.out.println(Arrays.asList(persons));
 		//tretia a lepsia moznost je Comparator - kto chce, pozrite si
 		//Comparator je null proof, Comparable + Collections.sort/Arrays.sort nie su
 
 		//anonymna trieda - implementacia bez toho, aby sme spravili novy public class PersonComparator extends Comparator<Person> {}
-		Arrays.sort(persons, new Comparator<Person>() {
-			@Override
-			public int compare(Person o1, Person o2) {
-				if(o1 == o2) return 0;
-				if(o2 == null) return 1;
-				if(o1 == null) return -1;
-				return o1.getName().compareTo(o2.getName());
-			}
-		});
+//		Arrays.sort(persons, new Comparator<Person>() {
+//			@Override
+//			public int compare(Person o1, Person o2) {
+//				if(o1 == o2) return 0;
+//				if(o2 == null) return 1;
+//				if(o1 == null) return -1;
+//				return o1.getName().compareTo(o2.getName());
+//			}
+//		});
 
 		//to iste cez lambda zapis
-		Arrays.sort(persons, (o1, o2) -> o1.getName().compareTo(o2.getName()));
-		Arrays.sort(persons, Comparator.comparing(Person::getName));
-
-		Collections.sort(pers, (o1, o2) -> {
-				if(o1 == o2) return 0;
-				if(o2 == null) return 1;
-				if(o1 == null) return -1;
-				return o1.getName().compareTo(o2.getName());
-			});
+//		Arrays.sort(persons, (o1, o2) -> o1.getName().compareTo(o2.getName()));
+//		Arrays.sort(persons, Comparator.comparing(Person::getName));
+//
+//		Collections.sort(pers, (o1, o2) -> {
+//				if(o1 == o2) return 0;
+//				if(o2 == null) return 1;
+//				if(o1 == null) return -1;
+//				return o1.getName().compareTo(o2.getName());
+//			});
 
 //		Car bmw = new Car("BMW");
 //		bmw.setOwner(jan);

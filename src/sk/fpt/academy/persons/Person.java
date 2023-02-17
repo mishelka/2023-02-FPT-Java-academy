@@ -5,6 +5,7 @@ import java.util.Objects;
 public class Person implements Comparable {
     private String name;
     private int age;
+
 //    private Car[] cars;
 //
 //    public void addCar(Car car) {
@@ -17,7 +18,7 @@ public class Person implements Comparable {
         this.name = name;
     }
 
-    public Person(String name, int age) {
+    public Person(String name, int age) throws AgeOutBoundsException {
         this(name);
         setAge(age);
     }
@@ -37,16 +38,14 @@ public class Person implements Comparable {
         return age;
     }
 
-    public boolean setAge(int ageNew) {
-        boolean test = isValidAge(ageNew);
-        if(test) {
-            this.age = ageNew;
-        }
-        return test;
+    public void setAge(int ageNew) throws AgeOutBoundsException {
+        validateAge(ageNew);
+        this.age = ageNew;
     }
 
-    private boolean isValidAge(int ageNew) {
-        return ageNew >= 0 && ageNew <= 150;
+    private void validateAge(int ageNew) throws AgeOutBoundsException {
+        if(ageNew < 0) throw new AgeOutBoundsException("Age can't be negative.");
+        if(ageNew > 150) throw new AgeOutBoundsException("Age can't be more than 150.");
     }
 
     @Override

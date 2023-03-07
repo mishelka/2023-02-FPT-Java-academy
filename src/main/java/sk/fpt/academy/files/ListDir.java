@@ -1,4 +1,4 @@
-package sk.fpt.academy.files;
+package io;
 
 import java.io.File;
 import java.io.IOException;
@@ -29,13 +29,17 @@ public class ListDir {
         // vypise vsetky subory s danou priponou
 //        listFilesWithExtension(dir, "txt");
 
-        List<String> directories = filterFiles(
+        List<File> directories = filterFiles(
                 ".", filePath -> new File(filePath).isDirectory()
         );
         System.out.println(directories);
 
-        List<String> filesBeginningWithH = filterFiles(".", filePath ->
-                filePath.substring(filePath.lastIndexOf(File.pathSeparator)).toLowerCase().startsWith("h"));
+        List<File> filesBeginningWithH = filterFiles(".", filePath ->
+        {
+            File f = new File(filePath);
+            if (f.isDirectory()) return false;
+            return f.getName().toLowerCase().startsWith("h");
+        });
         System.out.println(filesBeginningWithH);
     }
 
@@ -113,24 +117,22 @@ public class ListDir {
         }
     }
 
-    static List<String> filterFiles(String path, FileFilter filter) {
-        List<String> acceptedFiles = new ArrayList<>();
+    static List<File> filterFiles(String path, FileFilter filter) {
+        List<File> acceptedFiles = new ArrayList<>();
 
-        filterFiles(path, filter, acceptedFiles);
+        filterFiles(new File(path), filter, acceptedFiles);
 
         return acceptedFiles;
     }
 
-    static void filterFiles(String path, FileFilter filter, List<String> acceptedFiles) {
-        if(filter.accept(path)) {
-            acceptedFiles.add(path);
+    static void filterFiles(File file, FileFilter filter, List<File> acceptedFiles) {
+        if(filter.accept(file.getPath())) {
+            acceptedFiles.add(file);
         }
 
-        File f = new File(path);
-
-        if(f.isDirectory()) {
-            for (String p : f.list()) {
-                filterFiles(p, filter, acceptedFiles);
+        if(file.isDirectory()) {
+            for (File subFile : file.listFiles()) {
+                filterFiles(subFile, filter, acceptedFiles);
             }
         }
     }

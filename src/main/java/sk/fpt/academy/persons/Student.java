@@ -6,7 +6,7 @@ public class Student extends Person {
     private int studyYear = 1;
     private String studentId;
 
-    public Student(String name, int age, int studyYear, String studentId) {
+    public Student(String name, int age, int studyYear, String studentId) throws AgeOutBoundsException{
         super(name, age);
         this.studyYear = studyYear;
         this.studentId = studentId;

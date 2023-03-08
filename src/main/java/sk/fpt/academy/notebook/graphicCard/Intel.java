@@ -2,7 +2,6 @@ package sk.fpt.academy.notebook.graphicCard;
 
 import org.springframework.stereotype.Component;
 
-@Component
 public class Intel implements GraphicCard {
 
     private String config;

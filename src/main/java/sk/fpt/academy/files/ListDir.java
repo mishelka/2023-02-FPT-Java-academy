@@ -1,4 +1,4 @@
-package io;
+package sk.fpt.academy.files;
 
 import java.io.File;
 import java.io.IOException;
@@ -34,8 +34,7 @@ public class ListDir {
         );
         System.out.println(directories);
 
-        List<File> filesBeginningWithH = filterFiles(".", filePath ->
-        {
+        List<File> filesBeginningWithH = filterFiles(".", filePath -> {
             File f = new File(filePath);
             if (f.isDirectory()) return false;
             return f.getName().toLowerCase().startsWith("h");

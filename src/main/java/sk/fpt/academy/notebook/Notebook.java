@@ -1,22 +1,25 @@
 package sk.fpt.academy.notebook;
 
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import sk.fpt.academy.notebook.graphicCard.GraphicCard;
-import sk.fpt.academy.notebook.graphicCard.Intel;
-import sk.fpt.academy.notebook.graphicCard.Nvidia;
-import sk.fpt.academy.notebook.processor.*;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
+import sk.fpt.academy.notebook.graphicCard.GraphicCard;
+import sk.fpt.academy.notebook.processor.*;
 
+@Component
 public class Notebook {
 
     //loose coupling
+    @Autowired
+    @Qualifier("amd") //prepise @Primary
     Processor processor;
-    //graphic card
-    //hdd
 
-    public static void main(String[] args) {
+    @Autowired
+    GraphicCard graphicCard;
+
+    public Notebook() {}
+
+    public void start() {
         //close/tight coupling, no abstraction
 //        IntelProcessor processor = new IntelProcessor();
 
@@ -26,13 +29,26 @@ public class Notebook {
 
         //loose coupling
 //        using spring.xml and, optionally @Component:
-        ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
-        Processor p = (Processor) context.getBean("intelProcessor");
-        p.compute();
+//        context.getBean("...")
 
-        //app based configuration - using @Configuration and @Bean
-        ApplicationContext context2 = new AnnotationConfigApplicationContext(AppConfig.class);
-        GraphicCard g = context2.getBean(Intel.class);
-        g.render();
+        //using @Autowired
+        processor.compute();
+        graphicCard.render();
+    }
+
+    public Processor getProcessor() {
+        return processor;
+    }
+
+    public void setProcessor(Processor processor) {
+        this.processor = processor;
+    }
+
+    public GraphicCard getGraphicCard() {
+        return graphicCard;
+    }
+
+    public void setGraphicCard(GraphicCard graphicCard) {
+        this.graphicCard = graphicCard;
     }
 }

@@ -5,8 +5,8 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import sk.fpt.academy.notebook.graphicCard.*;
 
-@Configuration
-@ComponentScan("sk.fpt.academy.notebook.graphicCard")
+//@Configuration
+//@ComponentScan("sk.fpt.academy.notebook.processor")
 public class AppConfig {
 
 //    @Bean

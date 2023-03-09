@@ -1,10 +1,8 @@
 package sk.fpt.academy.persons.entities;
 
+import jakarta.persistence.*;
+import jakarta.validation.constraints.*;
 import sk.fpt.academy.persons.AgeOutBoundsException;
-
-import javax.persistence.*;
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
 
 @Entity
 public class Person { //implements Comparable { // netreba lebo mi to zosortuje databaza <3 :) <3
@@ -19,7 +17,9 @@ public class Person { //implements Comparable { // netreba lebo mi to zosortuje 
     @Column(length = 64, nullable = false)
     private String surname;
 
-    @Column(columnDefinition = "INT CHECK(age BETWEEN 0 AND 150)")
+//    @Column(columnDefinition = "INT CHECK(age BETWEEN 0 AND 150)")
+    @Min(0)
+    @Max(150)
     private int age;
 
     @Transient

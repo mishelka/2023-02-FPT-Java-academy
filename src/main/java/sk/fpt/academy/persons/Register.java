@@ -1,14 +1,10 @@
 package sk.fpt.academy.persons;
 
 import org.springframework.boot.CommandLineRunner;
-import org.springframework.boot.SpringApplication;
 import org.springframework.boot.WebApplicationType;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
-import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
 import sk.fpt.academy.persons.console.RegisterConsoleUI;
 import sk.fpt.academy.persons.entities.Person;
 import sk.fpt.academy.persons.services.PersonService;
@@ -24,7 +20,7 @@ public class Register {
     @Bean
     public CommandLineRunner runnerRegister(RegisterConsoleUI console) {
         return args -> {
-            console.addPerson(new Person("janko", "hrasko", 150));
+            console.addPerson(new Person("janko", "hrasko", 200));
             console.start();
         };
     }

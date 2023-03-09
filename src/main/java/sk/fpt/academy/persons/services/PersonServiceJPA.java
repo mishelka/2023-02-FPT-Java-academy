@@ -1,11 +1,9 @@
 package sk.fpt.academy.persons.services;
 
-import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 import sk.fpt.academy.persons.entities.Person;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
+import jakarta.persistence.*;
 import java.util.List;
 
 @Transactional

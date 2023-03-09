@@ -1,6 +1,6 @@
-package sk.fpt.academy.persons;
+package sk.fpt.academy.persons.entities;
 
-import sk.fpt.academy.persons.entities.Person;
+import sk.fpt.academy.persons.AgeOutBoundsException;
 
 import java.util.Objects;
 
@@ -8,7 +8,7 @@ public class Student extends Person {
     private int studyYear = 1;
     private String studentId;
 
-    public Student(String name, int age, int studyYear, String studentId) throws AgeOutBoundsException{
+    public Student(String name, int age, int studyYear, String studentId) throws AgeOutBoundsException {
         super(name, age);
         this.studyYear = studyYear;
         this.studentId = studentId;

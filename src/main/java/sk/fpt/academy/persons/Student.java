@@ -1,5 +1,7 @@
 package sk.fpt.academy.persons;
 
+import sk.fpt.academy.persons.entities.Person;
+
 import java.util.Objects;
 
 public class Student extends Person {

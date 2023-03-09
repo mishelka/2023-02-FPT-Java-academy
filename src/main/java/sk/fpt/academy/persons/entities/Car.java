@@ -1,9 +1,19 @@
-package sk.fpt.academy.persons;
+package sk.fpt.academy.persons.entities;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
 public class Car {
+    @Id
+    @GeneratedValue
+    private int id;
     private String brand;
     private boolean started = false;
-    private Person owner;
+
+    public Car() {}
+//    private Person owner;
 
     public Car(String brand) {
         this.brand = brand;
@@ -25,20 +35,20 @@ public class Car {
         this.started = started;
     }
 
-    public Person getOwner() {
-        return owner;
-    }
+//    public Person getOwner() {
+//        return owner;
+//    }
 
-    public void setOwner(Person owner) {
-        this.owner = owner;
-    }
+//    public void setOwner(Person owner) {
+//        this.owner = owner;
+//    }
 
     @Override
     public String toString() {
         return "Car {" +
                 "brand='" + brand + '\'' +
                 ", started=" + started +
-                ", owner=" + owner +
+//                ", owner=" + owner +
                 '}';
     }
 }

@@ -1,8 +1,7 @@
 package sk.fpt.academy;
 
 import sk.fpt.academy.persons.*;
-
-import java.util.*;
+import sk.fpt.academy.persons.entities.Person;
 
 class HelloWorld {
 	public static final int KONSTANTA = 123;
@@ -13,17 +12,17 @@ class HelloWorld {
 //		}
 //
 		Person jan,jan2;
-		try {
-			jan = new Person("Janko Hrasko", 1000);
-		} catch (AgeOutBoundsException e) {
-			System.err.println(e.getMessage());
-		}
-
-		try {
-			jan2 = new Person("Janko Hrasko", 30);
-		} catch (AgeOutBoundsException e) {
-			System.err.println(e.getMessage());
-		}
+//		try {
+//			jan = new Person("Janko Hrasko", 1000);
+//		} catch (AgeOutBoundsException e) {
+//			System.err.println(e.getMessage());
+//		}
+//
+//		try {
+//			jan2 = new Person("Janko Hrasko", 30);
+//		} catch (AgeOutBoundsException e) {
+//			System.err.println(e.getMessage());
+//		}
 
 //		jan.setAge(200);
 //		System.out.println(jan.getAge() + " " + jan.getName());

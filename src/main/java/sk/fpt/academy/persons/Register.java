@@ -6,9 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.annotation.Bean;
 import sk.fpt.academy.persons.console.RegisterConsoleUI;
-import sk.fpt.academy.persons.entities.Person;
-import sk.fpt.academy.persons.services.PersonService;
-import sk.fpt.academy.persons.services.PersonServiceJPA;
+import sk.fpt.academy.persons.services.*;
 
 @SpringBootApplication
 public class Register {
@@ -20,7 +18,6 @@ public class Register {
     @Bean
     public CommandLineRunner runnerRegister(RegisterConsoleUI console) {
         return args -> {
-            console.addPerson(new Person("janko", "hrasko", 200));
             console.start();
         };
     }
@@ -28,5 +25,15 @@ public class Register {
     @Bean
     public PersonService getPersonService() {
         return new PersonServiceJPA();
+    }
+
+    @Bean
+    public CarService getCarService() {
+        return new CarServiceJPA();
+    }
+
+    @Bean
+    public DepartmentService getDepartmentService() {
+        return new DepartmentServiceJPA();
     }
 }

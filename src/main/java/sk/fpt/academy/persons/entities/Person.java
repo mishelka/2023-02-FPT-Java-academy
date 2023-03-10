@@ -4,8 +4,11 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
 import sk.fpt.academy.persons.AgeOutBoundsException;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
-public class Person { //implements Comparable { // netreba lebo mi to zosortuje databaza <3 :) <3
+public class Person {
 
     @Id
     @GeneratedValue
@@ -25,15 +28,19 @@ public class Person { //implements Comparable { // netreba lebo mi to zosortuje 
     @Transient
     private boolean temp;
 
+    @OneToMany(fetch = FetchType.EAGER, mappedBy="owner",
+               cascade = CascadeType.ALL)
+    private List<Car> cars = new ArrayList<>();
+
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinTable(
+            name = "department_employee",
+            joinColumns = { @JoinColumn(name = "employee_id") },
+            inverseJoinColumns = { @JoinColumn(name = "department_id") }
+    )
+    private List<Department> departments = new ArrayList<>();
+
     public Person() {}
-
-//    private Car[] cars;
-//
-//    public void addCar(Car car) {
-//        cars...
-//        car.setOwner(this);
-//    }
-
 
     public Person(String name) {
         this.name = name;
@@ -49,6 +56,18 @@ public class Person { //implements Comparable { // netreba lebo mi to zosortuje 
         this(name, age);
         this.surname = surname;
 //        setAge(age);
+    }
+
+    public List<Car> getCars() {
+        return cars;
+    }
+
+    public void setCars(List<Car> cars) {
+        this.cars = cars;
+    }
+
+    public void addCar(Car c) {
+        this.cars.add(c);
     }
 
     public int getId() {
@@ -86,45 +105,28 @@ public class Person { //implements Comparable { // netreba lebo mi to zosortuje 
         this.age = age;
     }
 
-//    private void validateAge(int ageNew) throws AgeOutBoundsException {
-//        if(ageNew < 0) throw new AgeOutBoundsException("Age can't be negative.");
-//        if(ageNew > 150) throw new AgeOutBoundsException("Age can't be more than 150.");
-//    }
+    public List<Department> getDepartments() {
+        return departments;
+    }
+
+    public void setDepartments(List<Department> departments) {
+        this.departments = departments;
+    }
+
+    public void addEmployment(Department d) {
+        this.departments.add(d);
+    }
 
     @Override
     public String toString() {
         return "Person{" +
-                "name='" + name + '\'' +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", surname='" + surname + '\'' +
                 ", age=" + age +
+                ", temp=" + temp +
+                ", cars=" + cars +
+
                 '}';
     }
-
-//    @Override
-//    public boolean equals(Object o) {
-//        if (this == o) return true;
-//        if (o == null || getClass() != o.getClass()) return false;
-//        Person person = (Person) o;
-//        return age == person.age && Objects.equals(name, person.name);
-//    }
-//
-//    @Override
-//    public int hashCode() {
-//        return Objects.hash(name, age);
-//    }
-//
-//    @Override
-//    public int compareTo(Object o) {
-//        if(o == null) return 1;
-//        if(!(o instanceof Person)) return 1;
-//        Person p = (Person) o;
-//
-//        if(p.getName() == null) return 1;
-//        if(name == null) return -1;
-//
-//        int res = name.compareTo(p.getName());
-//        if(res == 0) {
-//            res = age - p.getAge();
-//        }
-//        return res;
-//    }
 }

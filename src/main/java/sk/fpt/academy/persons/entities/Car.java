@@ -10,12 +10,24 @@ public class Car {
     private String brand;
     private boolean started = false;
 
+    @ManyToOne
+    @JoinColumn(name = "owner_id", nullable=false)
+    private Person owner;
+
     public Car() {}
-//    private Person owner;
 
     public Car(String brand) {
         this.brand = brand;
     }
+
+    public Person getOwner() {
+        return owner;
+    }
+    public void setOwner(Person owner) {
+        this.owner = owner;
+    }
+
+//    private Person owner;
 
     public String getBrand() {
         return brand;
@@ -33,20 +45,13 @@ public class Car {
         this.started = started;
     }
 
-//    public Person getOwner() {
-//        return owner;
-//    }
-
-//    public void setOwner(Person owner) {
-//        this.owner = owner;
-//    }
-
     @Override
     public String toString() {
-        return "Car {" +
-                "brand='" + brand + '\'' +
+        return "Car{" +
+                "id=" + id +
+                ", brand='" + brand + '\'' +
                 ", started=" + started +
-//                ", owner=" + owner +
+                ", owner=" + owner.getName() + " " + owner.getSurname() +
                 '}';
     }
 }

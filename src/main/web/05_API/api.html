@@ -1,0 +1,81 @@
+﻿<html>
+<head>
+    <title>simple page</title>
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="api.js"></script>
+    <style>
+        .red {
+            color: red;
+        }
+        li {
+
+        }
+        .hiddenTemplates {
+            display: none;
+        }
+        h3, h2 {
+           margin-left: -15px;
+        }
+        .flex-div {
+            display: flex;
+            justify-content: flex-start;
+            flex-direction: row;
+            margin: 15px;
+        }
+    </style>
+</head>
+<body>
+    <H1>Toto je skuska - tu uz nieco vidis ale aj tak sa pozri do konzoly</H1>
+    <div class="flex-div">
+        <div>
+            <h2>Global functions</h2>
+            <h3>default values</h3>
+            <p id="defaultValues"></p>
+            <h3>eval(x)</h3>
+            <p id="eval"></p>
+            <h3>parseInt(string, radix)</h3>
+            <p id="parseInt"></p>
+            <h3>parseFloat(string)</h3>
+            <p id="parseFloat"></p>
+            <h3>decodeUri(encodedURI), encodeURI(uri)</h3>
+            <p id="decodeUri"></p>
+        </div>
+        <div>
+            <h2>Arrays</h2>
+            <p id="arrays"></p>
+            <h2>Args</h2>
+            <p id="args"></p>
+            <h2>Strings</h2>
+            <p id="strings"></p>
+        </div>
+        <div>
+            <h2>Regex</h2>
+            <p id="regex"></p>
+            <h2>Timer + Date + Locale</h2>
+            <p id="timer"></p>
+        </div>
+    </div>
+<noscript>
+    <p>Your browser either does not support JavaScript, or you have JavaScript turned off.</p>
+</noscript>
+<!--     <h1 id="mainHeader" class="text">Moj nadpis</h1>
+    <p id="odstavecText" class="text">Toto je dlhsi text odstavca</p>
+    <p class="text">Toto je text 2
+      <span class="text">toto je span s class text</span>
+    </p>
+    <p class="text">Toto je dlhsi text 3</p>
+ -->
+<!--<script src="oop.js"></script>-->
+<!--<input type="text" id="todoInput" placeholder="new todo task"/>-->
+<!--<button id="createTask">Create</button>-->
+<!--<ul id="todoList">-->
+<!--<li><span>clean room</span><button class="delete">x</button></li>-->
+<!--<li><span>sent mail</span><button class="delete">x</button></li>-->
+<!--</ul>-->
+<!--<script type="text/javascript" src="etc.js"></script>-->
+
+<!--<div class='hiddenTemplates'>-->
+<!--<li id="taskTemplate" class="taskItem"><span class="text">template text</span><div><button class="delete">x</button><div></li>-->
+<!--</div>-->
+</body>
+</html>

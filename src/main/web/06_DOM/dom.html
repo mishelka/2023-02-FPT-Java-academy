@@ -1,0 +1,70 @@
+﻿<html>
+<head>
+    <title>TODO TASKS 1</title>
+    <script src="http://code.jquery.com/jquery-2.2.3.min.js"></script>
+    <script src="dom.js"></script>
+    <style>
+        .red {
+            color: red;
+        }
+        .hidden {
+            display:none;
+        }
+        li {
+
+        }
+        .hiddenTemplates {
+            display: none;
+        }
+        h3, h2 {
+            margin-left: -15px;
+        }
+        .flex-div {
+            display: flex;
+            justify-content: flex-start;
+            flex-direction: row;
+            margin: 15px;
+        }
+    </style>
+</head>
+<body>
+<H1>TODO TASKS 1</H1>
+<div class="flex-div">
+    <form name="taskForm">
+        <input type="text" id="task" onblur="validate();"
+               onfocus="displayErrorMsg(false);">
+        <div id="errorMsg" class="hidden" style="height:16px;">Zadanie ulohy musi byt dlhsie ako 3 znaky</div>
+        <br/><br/>
+        <input type="submit" id="submitForm" onclick="submit()"/>
+        <input type="reset" id="resetForm" onclick="reset()"/>
+        <br/><br/>
+        Zoznam tvojich uloh:
+        <ul id="tasksList">
+            <li>toto bude zoznam uloh</li>
+        </ul>
+    </form>
+</div>
+<noscript>
+    <p>Your browser either does not support JavaScript, or you have JavaScript turned off.</p>
+</noscript>
+<!--     <h1 id="mainHeader" class="text">Moj nadpis</h1>
+    <p id="odstavecText" class="text">Toto je dlhsi text odstavca</p>
+    <p class="text">Toto je text 2
+      <span class="text">toto je span s class text</span>
+    </p>
+    <p class="text">Toto je dlhsi text 3</p>
+ -->
+<!--<script src="oop.js"></script>-->
+<!--<input type="text" id="todoInput" placeholder="new todo task"/>-->
+<!--<button id="createTask">Create</button>-->
+<!--<ul id="todoList">-->
+<!--<li><span>clean room</span><button class="delete">x</button></li>-->
+<!--<li><span>sent mail</span><button class="delete">x</button></li>-->
+<!--</ul>-->
+<!--<script type="text/javascript" src="etc.js"></script>-->
+
+<!--<div class='hiddenTemplates'>-->
+<!--<li id="taskTemplate" class="taskItem"><span class="text">template text</span><div><button class="delete">x</button><div></li>-->
+<!--</div>-->
+</body>
+</html>

@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Cars</title>
+    <script type="text/javascript"
+            src="car.js">
+    </script>
+</head>
+<body>
+
+    <p>
+
+        <input type='button' value='Mount Doors'
+               onclick='car1.mountAll();' />
+        <input type='button' value='Show Car'
+               onclick='car1.showCar();' />
+        <div></div>
+        <input type='button' value='<< Open FL'
+               onclick='car1.openDoor(0);' />
+
+        <input type='button' value='Open FR >>'
+               onclick='car1.openDoor(1);' />
+        <div></div>
+        <input type='button' value='<< Open RL'
+               onclick='car1.openDoor(2);' />
+
+        <input type='button' value='Open RR >>'
+               onclick='car1.openDoor(3);' />
+        <div></div>
+
+        <input type='button' value='Turn On'
+               onclick='car1.turnOn();' />
+        <input type='button' value='Turn Off'
+               onclick='car1.turnOff();' />
+
+    </p>
+
+</body>
+</html>

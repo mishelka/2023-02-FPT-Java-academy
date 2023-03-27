@@ -1,0 +1,47 @@
+{
+  "article": {
+    "id": 33
+  },
+  "comments": [
+    {
+      "id": 8,
+      "author": "Gabriel L.",
+      "dateCreated": "2016-04-20T09:59:43Z",
+      "lastUpdated": "2016-04-21T07:40:04Z",
+      "text": "Dá sa. alebo nie"
+    },
+    {
+      "id": 35,
+      "author": "Ďuri",
+      "dateCreated": "2016-04-21T02:48:35Z",
+      "lastUpdated": "2016-04-21T02:54:07Z",
+      "text": "Najlepší traktorísta"
+    },
+    {
+      "id": 38,
+      "author": "Fero",
+      "dateCreated": "2016-04-21T05:47:18Z",
+      "lastUpdated": "2016-04-21T05:47:18Z",
+      "text": "Ideme na pivo?"
+    },
+    {
+      "id": 39,
+      "author": "Jožo",
+      "dateCreated": "2016-04-21T05:47:43Z",
+      "lastUpdated": "2016-04-21T05:47:43Z",
+      "text": "Prečo nie?"
+    },
+    {
+      "id": 45,
+      "author": "fero",
+      "dateCreated": "2016-04-21T07:39:48Z",
+      "lastUpdated": "2016-04-21T07:39:48Z",
+      "text": "fowejrpw"
+    }
+  ],
+  "meta": {
+    "totalCount": 5,
+    "max": 100,
+    "offset": 0
+  }
+}

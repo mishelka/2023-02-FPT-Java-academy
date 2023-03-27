@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Loading Scripts</title>
+    <script src="./phishing.js" type="text/javascript"></script>
+</head>
+<body>
+    <h1>Loading Scripts</h1>
+
+    <h2>Invoking function from Button:</h2>
+    <form name="win">
+        <input type="button" value="How Much Did You Win?" onclick='showWinningsAlert()'/>
+    </form>
+    <h2>Invoking function from <texttt>script</texttt> Tag:</h2>
+    <script type="text/javascript">showWinningsInDocument()</script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+
+       function foo(){
+           function bar() {
+               return 3;
+           }
+           return bar();
+           function bar() {
+               return 8;
+           }
+       }
+       alert(foo());
+
+//        function foo(){
+//            var bar = function() {
+//                return 3;
+//            };
+//            return bar();
+//            var bar = function() {
+//                return 8;
+//            };
+//        }
+//        alert(foo());
+
+//        alert(foo());
+//        function foo(){ //however! var foo = function() throws an error
+//            var bar = function() {
+//                return 3;
+//            };
+//            return bar();
+//            var bar = function() {
+//                return 8;
+//            };
+//        }
+
+//        function foo(){
+//            return bar(); //error, bar not initialized yet
+//            var bar = function() {
+//                return 3;
+//            };
+//            var bar = function() {
+//                return 8;
+//            };
+//        }
+//        alert(foo());
+
+//             function foo() {
+// //                if(false) {
+//                     function x() {return 6;};
+// //                }
+//                 return x();
+// //                return x;
+//             }
+//             alert(foo());
+
+//            var today = function() {return new Date()}
+//            console.log(today);
+//            console.log(today());
+//
+//            var today2 = function today2() {return new Date()}
+//            console.log(today2);
+//            console.log(today2());
+    </script>
+</body>
+</html>

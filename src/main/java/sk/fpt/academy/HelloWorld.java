@@ -1,5 +1,6 @@
 package sk.fpt.academy;
 
+import jakarta.persistence.Entity;
 import sk.fpt.academy.persons.*;
 import sk.fpt.academy.persons.entities.Person;
 

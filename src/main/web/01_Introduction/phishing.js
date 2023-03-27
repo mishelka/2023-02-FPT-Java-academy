@@ -1,6 +1,6 @@
 function getMessage() {
-    var amount = Math.round(Math.random() * 100000);
-    var message = "You won " + amount + " EUR!\n" +
+    const amount = Math.round(Math.random() * 100000);
+    const message = "You won " + amount + " EUR!\n" +
         "To collect your winnings, send your credit card\n" +
         "and bank details to michaela.bacikova@tuke.sk";
     return message;

@@ -1,4 +1,4 @@
-//var goo = false;
+//var goo = false; //global variable
 function foo() {
     //Short-circuit evaluation of && and || operators:
     if(true == true || goo) {
